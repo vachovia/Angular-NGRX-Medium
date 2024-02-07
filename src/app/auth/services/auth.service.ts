@@ -9,27 +9,29 @@ import {environment} from './../../../environments/environment';
   providedIn: 'root',
 })
 export class AuthService {
+  apiUrl: string = environment.apiUrl;
+
   constructor(private http: HttpClient) {}
 
-  getCurrentUser(): Observable<CurrentUserInterface>{
-    const url = `${environment.apiUrl}/user`;
+  getCurrentUser(): Observable<CurrentUserInterface> {
+    const url = `${this.apiUrl}/user`;
 
     return this.http.get<AuthResponseInterface>(url).pipe(map(this.getUser));
   }
 
   register(data: RegisterRequestInterface): Observable<CurrentUserInterface> {
-    const url = `${environment.apiUrl}/users`;
+    const url = `${this.apiUrl}/users`;
 
     return this.http.post<AuthResponseInterface>(url, data).pipe(map(this.getUser));
   }
 
   login(data: LoginRequestInterface): Observable<CurrentUserInterface> {
-    const url = `${environment.apiUrl}/users/login`;
+    const url = `${this.apiUrl}/users/login`;
 
     return this.http.post<AuthResponseInterface>(url, data).pipe(map(this.getUser));
   }
 
-  getUser(response:AuthResponseInterface): CurrentUserInterface{
+  getUser(response: AuthResponseInterface): CurrentUserInterface {
     return response.user;
   }
 }

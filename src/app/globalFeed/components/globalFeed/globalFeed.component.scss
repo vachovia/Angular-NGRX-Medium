@@ -1,0 +1,11 @@
+.home-page {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #373a3c;
+}
+.container{
+  &.page{
+    margin-top: 1.5rem;
+  }
+}

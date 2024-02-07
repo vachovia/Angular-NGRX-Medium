@@ -1,4 +1,5 @@
-import { PersistanceService } from "./persistance.service";
-import { authInterceptor } from "./authInterceptor";
+import {PersistanceService} from './persistance.service';
+import {authInterceptor} from './authInterceptor';
+import {UtilsService} from './utils.service';
 
-export {PersistanceService, authInterceptor};
+export {PersistanceService, UtilsService, authInterceptor};

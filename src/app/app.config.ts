@@ -7,19 +7,22 @@ import {authFeatureKey, authReducer} from './auth/store/reducers';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideEffects } from '@ngrx/effects';
 import * as authEffects from './auth/store/effects'; // works only with * syntax does not work with destructuing {registerEffect} etc.
+import * as feedEffects from './shared/components/feed/store/effects';
 import { provideRouterStore, routerReducer } from '@ngrx/router-store';
 import { authInterceptor } from './shared/services';
+import { feedFeatureKey, feedReducer } from './shared/components/feed/store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(withInterceptors([authInterceptor])),
     provideRouter(routes),
     provideStore({
-      router: routerReducer // to clear Validation Errors after navigation
+      router: routerReducer, // to clear Validation Errors after navigation
     }),
     provideRouterStore(),
     provideState(authFeatureKey, authReducer),
-    provideEffects(authEffects),
+    provideState(feedFeatureKey, feedReducer),
+    provideEffects(authEffects, feedEffects),
     provideStoreDevtools({
       maxAge: 25,
       logOnly: !isDevMode(),

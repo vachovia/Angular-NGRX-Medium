@@ -23,7 +23,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" [routerLink]="['/profiles', data.currentUser.username]">
-              <img class="bi bi-person-circle" [src]="data.currentUser.image" /> {{ data.currentUser.username }}
+              <img id="userImg" class="bi bi-person-circle" [src]="data.currentUser.image"/> {{ data.currentUser.username }}
             </a>
           </li>
         </ng-container>
