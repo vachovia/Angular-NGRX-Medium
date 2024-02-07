@@ -1,0 +1,41 @@
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.article-preview .preview-link ul {
+  float: right;
+  max-width: 50%;
+  vertical-align: top;
+}
+.article-preview .preview-link ul li {
+  font-weight: 300;
+  font-size: 0.8rem !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+ul.tag-list {
+  list-style: none !important;
+}
+.tag-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+.tag-default {
+  color: #fff !important;
+  font-size: 0.8rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  white-space: nowrap;
+  margin-right: 3px;
+  margin-bottom: 0.2rem;
+  display: inline-block;
+}
+ul.tag-list li {
+  display: inline-block !important;
+}
+.tag-default.tag-outline {
+  border: 1px solid #ddd;
+  color: #aaa !important;
+  background: none !important;
+}

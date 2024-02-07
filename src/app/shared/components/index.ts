@@ -5,6 +5,8 @@ import {BannerComponent} from './banner/banner.component';
 import {ErrorMessageComponent} from './errorMessage/errorMessage.component';
 import {LoadingComponent} from './loading/loading.component';
 import {PaginationComponent} from './pagination/pagination.component';
+import {TagListComponent} from './mc-tag-list/mc-tag-list.component';
+import { PopularTagsComponent } from './popular-tags/popular-tags.component';
 
 export {
   BackendErrorMessagesComponent,
@@ -14,4 +16,6 @@ export {
   ErrorMessageComponent,
   LoadingComponent,
   PaginationComponent,
+  TagListComponent,
+  PopularTagsComponent,
 };

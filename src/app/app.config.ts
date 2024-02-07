@@ -8,9 +8,11 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideEffects } from '@ngrx/effects';
 import * as authEffects from './auth/store/effects'; // works only with * syntax does not work with destructuing {registerEffect} etc.
 import * as feedEffects from './shared/components/feed/store/effects';
+import * as popularTagsEffects from './shared/components/popular-tags/store/effects';
 import { provideRouterStore, routerReducer } from '@ngrx/router-store';
 import { authInterceptor } from './shared/services';
 import { feedFeatureKey, feedReducer } from './shared/components/feed/store';
+import { popularTagsFeatureKey, popularTagsReducer } from './shared/components/popular-tags/store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,7 +24,8 @@ export const appConfig: ApplicationConfig = {
     provideRouterStore(),
     provideState(authFeatureKey, authReducer),
     provideState(feedFeatureKey, feedReducer),
-    provideEffects(authEffects, feedEffects),
+    provideState(popularTagsFeatureKey, popularTagsReducer),
+    provideEffects(authEffects, feedEffects, popularTagsEffects),
     provideStoreDevtools({
       maxAge: 25,
       logOnly: !isDevMode(),

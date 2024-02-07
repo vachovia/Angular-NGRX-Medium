@@ -1,6 +1,6 @@
 import {routerNavigationAction} from '@ngrx/router-store'
 import {createFeature, createReducer, on} from '@ngrx/store'
-import {FeedStateInterface} from '../types/feedState.interface'
+import {FeedStateInterface} from './../types/'
 import {feedActions} from './actions'
 
 const initialState: FeedStateInterface = {

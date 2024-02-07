@@ -4,14 +4,22 @@ import {feedActions, selectError, selectFeedData, selectIsLoading} from './store
 import {combineLatest} from 'rxjs';
 import {CommonModule, DatePipe} from '@angular/common';
 import {ActivatedRoute, Params, Router, RouterLink} from '@angular/router';
-import {LoadingComponent, ErrorMessageComponent, PaginationComponent} from './../';
+import {LoadingComponent, ErrorMessageComponent, PaginationComponent, TagListComponent} from './../';
 import queryString from 'query-string';
 import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'mc-feed',
   standalone: true,
-  imports: [CommonModule, RouterLink, DatePipe, LoadingComponent, ErrorMessageComponent, PaginationComponent],
+  imports: [
+    CommonModule,
+    RouterLink,
+    DatePipe,
+    LoadingComponent,
+    ErrorMessageComponent,
+    PaginationComponent,
+    TagListComponent,
+  ],
   templateUrl: './feed.component.html',
   styleUrl: './feed.component.scss',
 })
@@ -42,10 +50,10 @@ export class FeedComponent implements OnInit {
 
     const parsedUrl = queryString.parseUrl(this.url);
 
-    const stringifiedParams=queryString.stringify({
+    const stringifiedParams = queryString.stringify({
       limit: this.limit,
       offset: offset,
-      ...parsedUrl.query
+      ...parsedUrl.query,
     });
 
     const apiUrlWithParams = `${parsedUrl.url}?${stringifiedParams}`;
