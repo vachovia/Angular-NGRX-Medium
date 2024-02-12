@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { BannerComponent, FeedComponent } from './../../../shared/components';
+import { BannerComponent, FeedComponent, FeedTogglerComponent } from './../../../shared/components';
 import { PopularTagsComponent } from './../../../shared/components';
 
 @Component({
   selector: 'mc-global-feed',
   standalone: true,
-  imports: [FeedComponent, BannerComponent, PopularTagsComponent],
+  imports: [FeedComponent, BannerComponent, PopularTagsComponent, FeedTogglerComponent],
   templateUrl: './globalFeed.component.html',
   styleUrl: './globalFeed.component.scss'
 })

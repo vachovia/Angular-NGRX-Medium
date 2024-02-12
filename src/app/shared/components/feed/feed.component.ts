@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {feedActions, selectError, selectFeedData, selectIsLoading} from './store';
 import {combineLatest} from 'rxjs';
@@ -23,7 +23,7 @@ import {environment} from '../../../../environments/environment';
   templateUrl: './feed.component.html',
   styleUrl: './feed.component.scss',
 })
-export class FeedComponent implements OnInit {
+export class FeedComponent implements OnInit, OnChanges {
   @Input() url: string = '';
 
   currentPage: number = 0;
@@ -43,6 +43,13 @@ export class FeedComponent implements OnInit {
       this.currentPage = Number(params['page'] || 1);
       this.fetchFeed();
     });
+  }
+
+  ngOnChanges(changes:SimpleChanges):void{
+    const isUrlChanged = !changes['url'].firstChange && changes['url'].currentValue !== changes['url'].previousValue;
+    if (isUrlChanged) {
+      this.fetchFeed();
+    }
   }
 
   fetchFeed(): void {
