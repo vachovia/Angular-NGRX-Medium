@@ -8,6 +8,7 @@ import {PaginationComponent} from './pagination/pagination.component';
 import {TagListComponent} from './mc-tag-list/mc-tag-list.component';
 import {PopularTagsComponent} from './popular-tags/popular-tags.component';
 import {FeedTogglerComponent} from './feedToggler/feed-toggler/feed-toggler.component';
+import {ArticleFormComponent} from './articleForm/article-form.component';
 
 export {
   BackendErrorMessagesComponent,
@@ -20,4 +21,5 @@ export {
   TagListComponent,
   PopularTagsComponent,
   FeedTogglerComponent,
+  ArticleFormComponent,
 };

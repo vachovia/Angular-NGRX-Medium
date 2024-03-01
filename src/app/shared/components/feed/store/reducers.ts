@@ -1,7 +1,7 @@
 import {routerNavigationAction} from '@ngrx/router-store'
 import {createFeature, createReducer, on} from '@ngrx/store'
 import {FeedStateInterface} from './../types/'
-import {feedActions} from './actions'
+import {feedActions} from './'
 
 const initialState: FeedStateInterface = {
   isLoading: false,

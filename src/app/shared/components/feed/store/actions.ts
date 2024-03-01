@@ -1,5 +1,5 @@
 import {createActionGroup, emptyProps, props} from '@ngrx/store'
-import {GetFeedResponseInterface} from './../types/getFeedResponse.interface'
+import {GetFeedResponseInterface} from './../types'
 
 export const feedActions = createActionGroup({
   source: 'feed',

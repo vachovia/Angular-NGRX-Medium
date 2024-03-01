@@ -1,0 +1,48 @@
+<div class="editor-page pt-4">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-xs-12">
+        <mc-backend-error-messages *ngIf="errors" [backendErrors]="errors"></mc-backend-error-messages>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <fieldset>
+            <fieldset class="form-group mt-2">
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Article title"
+                formControlName="title"
+              />
+            </fieldset>
+            <fieldset class="form-group mt-2">
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="What is this article about"
+                formControlName="description"
+              />
+            </fieldset>
+            <fieldset class="form-group mt-2">
+              <textarea
+                class="form-control form-control-lg"
+                rows="8"
+                placeholder="Write your article (in markdown)"
+                formControlName="body"
+              ></textarea>
+            </fieldset>
+            <fieldset class="form-group mt-2">
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Enter tags"
+                formControlName="tagList"
+              />
+            </fieldset>
+          </fieldset>
+          <fieldset class="mt-4">
+            <button type="submit" class="btn btn-lg btn-success float-end" [disabled]="form.invalid || isSubmitting">Publish Article</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
