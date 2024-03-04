@@ -5,9 +5,11 @@ import {ProfileInterface} from './profile.interface';
 import {PopularTagType} from './popularTag.type';
 import {ArticleResponseInterface} from './articleResponse.interface';
 import {ArticleRequestInterface} from './articleRequest.interface';
+import { CurrentUserRequestInterface } from './currentUserRequest.interface';
 
 export {
   CurrentUserInterface,
+  CurrentUserRequestInterface,
   BackendErrorsInterface,
   ArticleInterface,
   PopularTagType,
