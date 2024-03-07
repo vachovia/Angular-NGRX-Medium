@@ -1,0 +1,13 @@
+<button
+  (click)="handleLike()"
+  [ngClass]="{
+    btn: true,
+    'btn-sm': true,
+    'btn-success': isFavorited,
+    'btn-outline-success': !isFavorited
+  }"
+>
+  <i class="bi bi-suit-heart"></i>
+  <span>&nbsp; {{ favoritesCount }}</span>
+</button>
+

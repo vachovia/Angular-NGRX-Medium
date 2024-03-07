@@ -13,7 +13,13 @@
           </a>
           <span class="date">{{ article.createdAt | date : 'longDate' }}</span>
         </div>
-        <div class="text-end">ADD TO FAVORITES</div>
+        <div class="text-end">
+          <mc-add-to-favorites
+            [isFavorited]="article.favorited"
+            [articleSlug]="article.slug"
+            [favoritesCount]="article.favoritesCount"
+          ></mc-add-to-favorites>
+        </div>
       </div>
       <a [routerLink]="['/articles', article.slug]" class="preview-link">
         <h1>{{ article.title }}</h1>
@@ -22,6 +28,11 @@
         <mc-tag-list [tags]="article.tagList"></mc-tag-list>
       </a>
     </div>
-    <mc-pagination [total]="data.feed.articlesCount" [limit]="limit" [url]="baseUrl" [currentPage]="currentPage"></mc-pagination>
+    <mc-pagination
+      [total]="data.feed.articlesCount"
+      [limit]="limit"
+      [url]="baseUrl"
+      [currentPage]="currentPage"
+    ></mc-pagination>
   </div>
 </ng-container>

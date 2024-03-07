@@ -4,7 +4,7 @@ import {feedActions, selectError, selectFeedData, selectIsLoading} from './store
 import {combineLatest} from 'rxjs';
 import {CommonModule, DatePipe} from '@angular/common';
 import {ActivatedRoute, Params, Router, RouterLink} from '@angular/router';
-import {LoadingComponent, ErrorMessageComponent, PaginationComponent, TagListComponent} from './../';
+import {LoadingComponent, ErrorMessageComponent, PaginationComponent, TagListComponent, AddToFavoritesComponent} from './../';
 import queryString from 'query-string';
 import {environment} from '../../../../environments/environment';
 
@@ -19,6 +19,7 @@ import {environment} from '../../../../environments/environment';
     ErrorMessageComponent,
     PaginationComponent,
     TagListComponent,
+    AddToFavoritesComponent
   ],
   templateUrl: './feed.component.html',
   styleUrl: './feed.component.scss',
